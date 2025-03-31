@@ -2,7 +2,8 @@
 title: Introduction
 ---
 
-# Ruskin
+![Ruskin Logo With Black Text Color](./assets/logo-black.svg#only-light)
+![Ruskin Logo With White Text Color](./assets/logo-white.svg#only-dark)
 
 Ruskin is a modern distributed open source message queuing system built with Go.
 
