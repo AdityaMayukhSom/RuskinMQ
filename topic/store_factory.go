@@ -1,4 +1,4 @@
-package queue
+package topic
 
 type StoreFactoryConfig struct {
 }
@@ -24,6 +24,6 @@ func NewMemoryStoreFactory(config *StoreFactoryConfig) *MemoryStoreFactory {
 
 func (msf *MemoryStoreFactory) Produce(topicName string) Store {
 
-	return NewMemoryStore(topicName)
+	return NewInMemoryTopic(topicName)
 
 }

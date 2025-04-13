@@ -25,7 +25,7 @@ func NewProducerBroker(loadDistributor *load.LoadDistributor) *ProducerBroker {
 	}
 }
 
-func (pb *ProducerBroker) addMessageToQueue(message transport.Message) {
+func (pb *ProducerBroker) AddMessageToQueue(message transport.Message) {
 	ti := mq.TopicIdentifier(message.Topic)
 
 	queue, found := pb.topicQueueMap[ti]
@@ -56,7 +56,7 @@ func (pb *ProducerBroker) Start(listenAddr string, producerChannels ...chan<- st
 
 	go func(pb *ProducerBroker) {
 		for msg := range pb.messageChannel {
-			go pb.addMessageToQueue(msg)
+			go pb.AddMessageToQueue(msg)
 		}
 	}(pb)
 
